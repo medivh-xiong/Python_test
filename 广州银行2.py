@@ -3,7 +3,7 @@ import time
 import datetime
 
 cookies = {
-    '2mfFfHc8uOmwP': '5RLvHbDFxuZWcqGitar_amaWu1IJU8i_1xnlY2sMtWeBeurMef2zlSHDssLjy3czsGDBoT2FyTByUTj4CtwMwmUrk0pjEERiOnrInDN9kyAMVFahxr2KCB0PRLFBUeoXIqacL3O1_YPAl7wi5twE8NkVe7ZUvywd_3wP.7h.FI3zKSTKSqTzNSEb0jjiJn8Z8R90Z33Fvqh.OR5Ef.Ac9_QRvBr5BH_RumCF_G31O87akJoACv4fkQZxzXVpxmZItosv5zpnGVU_d2.cBLe8LPB',
+    '2mfFfHc8uOmwP': '5RLvHbDFxuZWcqGitarefyagq.Nc4t3ilKizfdftSFdesQEf0Jd43JWmQoX7tBEyCWoYsdDGoORIpU7pqdxVkb.rUVkP3CAC2NdMvG3Of7Jzxpv7MPc1OMYRmMEulBmaM_2CCwCV3BGtgat7EaWYYrh57gNAWSWHvkEaHOL99pIJc4UKD4mvT76GgTGJJKbJh0FSq2xUwraJipmZFKBC6fhq6RJfcyNEnII4GOTs_uaVZupcLphm8wWDm_5_PAo9iSPRlsYkd4kCOeOPZLqxIoq',
     'sensorsdata2015jssdkcross': '%7B%22distinct_id%22%3A%22188c21bc1811ef-0c18290424cd5c8-6a126d64-250125-188c21bc184141%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_utm_source%22%3A%22mobileAppBank%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTg4YzIxYmMxODExZWYtMGMxODI5MDQyNGNkNWM4LTZhMTI2ZDY0LTI1MDEyNS0xODhjMjFiYzE4NDE0MSIsImlkZW50aXR5X21hbGxfdG9rZW4iOiJ1K09iNG5JMC9OYVZ1NUs2ZUNadTVrb1MzcWhET0FwQmZmN05ZU2E5bnN0MU9WTGdKSVlGN3dQSkJJYlhrQTZEIiwiJGlkZW50aXR5X21wX3VuaW9uaWQiOiJvbGNmOHZzZnRobW5zc2cyUmx2NlJYcF9IcFRNIiwiaWRlbnRpdHlfdXNlcmlkIjoib0NSUU81Qk5DbnI5S00tVFhVSWNFcUt6UExZUSIsImlkX2NhcmRfbnVtYmVyIjoib0hpZG5JVFFRSFN2TW5zSkZjMkV4MEVyQzZqNmc4aG5JNHBJc1NKU2ZCOD0iLCIkaWRlbnRpdHlfbW9iaWxlIjoiaytHYlZqb1l3L3RHRTRLRWZqYWd6QT09In0%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%22%2C%22value%22%3A%22%22%7D%2C%22%24device_id%22%3A%22188c21bc1811ef-0c18290424cd5c8-6a126d64-250125-188c21bc184141%22%7D',
     '2mfFfHc8uOmwO': '5qThisHB7YEaDbqntJfd31Yh57o.oHENyXefAA4csdG0UUS5WHprtARfKAbVjzV7JvQXxsQGxayv_CUE65uR43A',
     'sajssdk_2015_cross_new_user': '1',
@@ -11,7 +11,7 @@ cookies = {
 
 headers = {
     'Host': 'mall.creditcard.gzcb.com.cn',
-    # 'Cookie': '2mfFfHc8uOmwP=5RLvHbDFxuZWcqGitar_amaWu1IJU8i_1xnlY2sMtWeBeurMef2zlSHDssLjy3czsGDBoT2FyTByUTj4CtwMwmUrk0pjEERiOnrInDN9kyAMVFahxr2KCB0PRLFBUeoXIqacL3O1_YPAl7wi5twE8NkVe7ZUvywd_3wP.7h.FI3zKSTKSqTzNSEb0jjiJn8Z8R90Z33Fvqh.OR5Ef.Ac9_QRvBr5BH_RumCF_G31O87akJoACv4fkQZxzXVpxmZItosv5zpnGVU_d2.cBLe8LPB; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22188c21bc1811ef-0c18290424cd5c8-6a126d64-250125-188c21bc184141%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_utm_source%22%3A%22mobileAppBank%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTg4YzIxYmMxODExZWYtMGMxODI5MDQyNGNkNWM4LTZhMTI2ZDY0LTI1MDEyNS0xODhjMjFiYzE4NDE0MSIsImlkZW50aXR5X21hbGxfdG9rZW4iOiJ1K09iNG5JMC9OYVZ1NUs2ZUNadTVrb1MzcWhET0FwQmZmN05ZU2E5bnN0MU9WTGdKSVlGN3dQSkJJYlhrQTZEIiwiJGlkZW50aXR5X21wX3VuaW9uaWQiOiJvbGNmOHZzZnRobW5zc2cyUmx2NlJYcF9IcFRNIiwiaWRlbnRpdHlfdXNlcmlkIjoib0NSUU81Qk5DbnI5S00tVFhVSWNFcUt6UExZUSIsImlkX2NhcmRfbnVtYmVyIjoib0hpZG5JVFFRSFN2TW5zSkZjMkV4MEVyQzZqNmc4aG5JNHBJc1NKU2ZCOD0iLCIkaWRlbnRpdHlfbW9iaWxlIjoiaytHYlZqb1l3L3RHRTRLRWZqYWd6QT09In0%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%22%2C%22value%22%3A%22%22%7D%2C%22%24device_id%22%3A%22188c21bc1811ef-0c18290424cd5c8-6a126d64-250125-188c21bc184141%22%7D; 2mfFfHc8uOmwO=5qThisHB7YEaDbqntJfd31Yh57o.oHENyXefAA4csdG0UUS5WHprtARfKAbVjzV7JvQXxsQGxayv_CUE65uR43A; sajssdk_2015_cross_new_user=1',
+    # 'Cookie': '2mfFfHc8uOmwP=5RLvHbDFxuZWcqGitarefyagq.Nc4t3ilKizfdftSFdesQEf0Jd43JWmQoX7tBEyCWoYsdDGoORIpU7pqdxVkb.rUVkP3CAC2NdMvG3Of7Jzxpv7MPc1OMYRmMEulBmaM_2CCwCV3BGtgat7EaWYYrh57gNAWSWHvkEaHOL99pIJc4UKD4mvT76GgTGJJKbJh0FSq2xUwraJipmZFKBC6fhq6RJfcyNEnII4GOTs_uaVZupcLphm8wWDm_5_PAo9iSPRlsYkd4kCOeOPZLqxIoq; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22188c21bc1811ef-0c18290424cd5c8-6a126d64-250125-188c21bc184141%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_utm_source%22%3A%22mobileAppBank%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTg4YzIxYmMxODExZWYtMGMxODI5MDQyNGNkNWM4LTZhMTI2ZDY0LTI1MDEyNS0xODhjMjFiYzE4NDE0MSIsImlkZW50aXR5X21hbGxfdG9rZW4iOiJ1K09iNG5JMC9OYVZ1NUs2ZUNadTVrb1MzcWhET0FwQmZmN05ZU2E5bnN0MU9WTGdKSVlGN3dQSkJJYlhrQTZEIiwiJGlkZW50aXR5X21wX3VuaW9uaWQiOiJvbGNmOHZzZnRobW5zc2cyUmx2NlJYcF9IcFRNIiwiaWRlbnRpdHlfdXNlcmlkIjoib0NSUU81Qk5DbnI5S00tVFhVSWNFcUt6UExZUSIsImlkX2NhcmRfbnVtYmVyIjoib0hpZG5JVFFRSFN2TW5zSkZjMkV4MEVyQzZqNmc4aG5JNHBJc1NKU2ZCOD0iLCIkaWRlbnRpdHlfbW9iaWxlIjoiaytHYlZqb1l3L3RHRTRLRWZqYWd6QT09In0%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%22%2C%22value%22%3A%22%22%7D%2C%22%24device_id%22%3A%22188c21bc1811ef-0c18290424cd5c8-6a126d64-250125-188c21bc184141%22%7D; 2mfFfHc8uOmwO=5qThisHB7YEaDbqntJfd31Yh57o.oHENyXefAA4csdG0UUS5WHprtARfKAbVjzV7JvQXxsQGxayv_CUE65uR43A; sajssdk_2015_cross_new_user=1',
     'content-type': 'application/json;charset=utf-8',
     'accept': 'application/json, text/plain, */*',
     'sec-fetch-site': 'same-origin',
@@ -24,17 +24,17 @@ headers = {
 }
 
 params = {
-    'v9xtfhMd': '5niUtlU5NgSF7QRQ1e.EZNk.pC0OO_k.orNeAh94rp_vis2VfpZmZdL2xoFDJaY9AyYouAGp2gpvBQkT7uYoDzUaOYWBV0m4kFAGCS4UABEskldSGVqAJKPK54hdMA7FtenvLK3Aa4nS6QntYFigooGWhqLWi4Ca0Mp6Ou2IXuTETV3D0foehDPp2O_QMLCPMO.6B1.DYB4WQw_SSh0_FMcZ0hBsVzdUn1fqstfKBAeZYEURkJhSvyKIvY1r.zHC8Atvw7x6GXuiJ.kWo1dwFhJBt.g9.1O9znhmkPPtAtPrH9SwTCKrMMdaCpQb6FLXZ',
+    'v9xtfhMd': '5sQJg6WN1h_YZpiQyrzECx_QdLJT9u5E_7kelxUTzmhcAyS9g.S3jfh3ttI98UrW7_aaAFo62OAxmFqxcR8TJk4950Rw3IFstZSVFiS_FurUcEDIpqafaHiZQ9sOkEmEFPJmnvrs2gU2dM7sBNj8q8fAGcVczPqeE3LIU11RWXQ8V11Phi2OoZhz0.SRNg4r5g0FMuDKDxwzesB6uonsqhy1p9squhKHblNXwCun7FPjNJmGQuTnBZqxMp_ATIBHUaLeCxdFGlcn.BLXTyycn0Aii1ahaTQtRKN3HeojxtA5iNVOJWKPlGEbBug8GM3r7',
 }
 
 json_data = {
     'data': {
-        'key': 'e8bc8eea9af7f79ef2f5118fd5ea213c',
+        'key': 'e451598dbbbeae672424db78ccdcdb09',
         'userKey': '8b493edd1a9940b4ad1d73a56609a4ba641',
         'userToken': '070fa4f0cbfc470eb00f086c683042a8120',
-        'voucherId': '3621',
+        'voucherId': '3627',
     },
-    'sign': 'c83b352454a62ffa25ac2eefc14d0649',
+    'sign': '6828c2b101cca802acff96415c9bb944',
 }
 
 # 早上10点准点请求
@@ -51,7 +51,7 @@ def send_request():
 
 
 
-target_time = datetime.datetime(2023, 6, 16, 10, 52, 0)
+target_time = datetime.datetime(2023, 6, 16, 11, 0, 0)
 time_diff = (target_time - datetime.datetime.now()).total_seconds()
 if time_diff > 0:
     time.sleep(time_diff)
@@ -65,7 +65,6 @@ while result:
         time.sleep(0.2)
         continue
     json = response.json()
-    print(json)
     rspCode = json['RspCode']
     msg = json['msg']
     if "抢光" in msg:

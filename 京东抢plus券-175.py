@@ -2,71 +2,49 @@ import requests
 import time
 import datetime
 
+# 🍗
 cookies = {
-    '__jda': '122270672.1668069089029464342293.1668069089.1699588680.1699594969.167',
-    'b_dw': '1905',
-    'b_dh': '927',
-    'b_dpr': '2',
-    'b_webp': '1',
-    'b_avif': '1',
-    'shshshfpb': 'AAug1YbeLEg7yo5wUWyRlNuVrILDzmCIKtzs4_wAAAAA',
-    'shshshfp': 'b6ec8c37a67e0e37fd7f25ffacb1dc2b',
-    'shshshfpa': '3910eb4c-77a3-c4d8-4a59-99a21ffd1286-1668069091',
-    'jcap_dvzw_fp': 'MStjxvc74o8PNBQNWwvkqMy4UUC2oFU3mziJBO7xwNEc-qWJfCkVnJtoSp00zaKo8Gu2BA==',
-    '__jdu': '1668069089029464342293',
-    'shshshfpx': '3910eb4c-77a3-c4d8-4a59-99a21ffd1286-1668069091',
-    '3AB9D23F7A4B3CSS': 'jdd037XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4AAAAMLW7ASE3QAAAAAD46WMYSI2ESBNQX',
-    'unpl': 'JF8EAKZnNSttWkgHUEhVHxsRS1QEW10ATkQKbW4BXQoNSl0HGlAdEBB7XlVdXxRLFx9vZhRUXVNPXQ4aAysSEHteVV1ZDUsQAWhiNWRdWUpUBBwLGBsSe15Ublw4SxAEZmYCXFxRQ1UGEwccFxJOXldWXzhKJwNnYDVkbVl7VTUbAhgSFEpdVV9eCk4nSAFmSFRaX0JVAhMDEhoRSFVRWVgKThQAZ2U1VW1b',
-    'pinId': '9zvM1MUZPR30TcKyARJfCQ',
-    'whwswswws': '',
-    'TrackID': '1tBSM6p1R1xOtdo8Uk3GX-Y8nVFQt40bIz_g8DZSq2jTZWhWtugQk-RUP2iijSjmE2xqKwyUs0mcput0vfGAXp0Ea_oKSCbqlcLGorYI9MnvCC1vs8qc5DwZen9N5YLra',
-    'qid_uid': '92095ee1-5b27-46be-8b6a-1bc810458c13',
-    'qid_fs': '1686190520449',
-    'qid_ls': '1686190520449',
-    'qid_ts': '1686190520450',
-    'qid_vis': '1',
-    'mba_muid': '1668069089029464342293',
-    'joyya': '1699588683.1699588686.60.1cfuc41i6',
-    'visitkey': '737803510179678',
-    'TrackerID': '0cg5NqeVDJnY-hI4zwRvGGjRM03e6KG-Z99E9VlA79jCbqTT0JLoyducSj8Rp6C9q-1Dp8PjOLP1yJi_cyie6w5LViY5ZMfo0sJs-4_Ghd8L2Ms4SvO7IAJ36pAGctANIlerdPu9Fi9oZlxhrRS3yg',
-    'cid': '9',
+    '__jdc': '122270672',
+    'mba_muid': '16855228069111036368777',
+    'shshshfpa': '9df3021d-6d6e-5cd6-b3ac-f07a3d96d294-1685522807',
+    'shshshfpx': '9df3021d-6d6e-5cd6-b3ac-f07a3d96d294-1685522807',
+    '3AB9D23F7A4B3C9B': 'FOZMWMMP43LGHUHS5BLNFLD6KPXM7EUJO5ZTK7ZFXZ7ULZYBJLBPEBTL5W56FHXFHWBDAZVGAVITNMUSNPXUDH6HJE',
+    'wxa_level': '1',
     'retina': '1',
+    'cid': '9',
+    'jxsid': '16981357060546609522',
+    'appCode': 'ms0ca95114',
     'webp': '1',
-    '__wga': '1699437683562.1699437683562.1699404283878.1690941155328.1.12',
-    '__jdv': '122270672%7Ckong%7Ct_2025416364_%7Cjingfen%7C32bdbf58018a4194b83858fd0830c731%7C1699588682794',
-    'pt_key': 'AAJlNyU4ADDddlzBn2367E81jOV5T9oCvnu9i9wpVn_sMGDkkIffDxxVB9o0YiuTFYufpsuxFdE',
-    'pt_pin': '15951003078_p',
-    'pt_token': 'gff3s2oq',
-    'pwdt_id': '15951003078_p',
-    'ipLoc-djd': '12-904-907-50559',
-    'pin': '15951003078_p',
-    'unick': '%E5%86%A5%E7%8E%8B%E4%B9%8B%E6%AD%8C',
-    '_tp': 'ak3bQDgGku8%2BskP5GCRaiw%3D%3D',
-    '_pst': '15951003078_p',
-    'PPRD_P': 'UUID.1668069089029464342293',
-    'areaId': '12',
-    'thor': 'BF80140138890A11F2001240DE13FB3F3C61C0880504BFA8A1E9BDE57F39C654C714A1860119787ACEF4F08031825962BD7945907A3EC992BA451EBBE2F664F61EB1AD88765C6EBC5F65B3A1DC4051B057862E6126E0BA088028F91AD9DB2394C37DCB8F4A497A43EA43FEC38B3903F69A9C67E73B817B7EEE16E24C9F6A623F102BD8E2DB796834FAA910C4F31B5B0C',
-    'flash': '2_eNDTpeyjxY4oYUgwJ8A1syjFQD1NtrlyehTmAowLCyXTwHSIv5MafKJmRdTIW7VMB4ap1DmLw-b4chDWOEUYPqrvVXvIDJGSukSwQ7hG8JM*',
-    '3AB9D23F7A4B3C9B': '7XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4',
-    'cn': '5',
-    'ceshi3.com': '201',
-    'wlfstk_smdl': 'x3g7lj35l3hytqm7kg9xcvf4ffh84b12',
-    'p-request-id': '15951003078_p2023111013Kmi2b3TfKI',
+    'visitkey': '7069030791597955689',
+    '__jdv': '122270672%7Cdirect%7C-%7Cnone%7C-%7C1698135706496',
+    'PPRD_P': 'UUID.16855228069111036368777',
     'share_cpin': '',
     'share_open_id': '',
     'share_gpin': '',
     'shareChannel': '',
     'source_module': '',
     'erp': '',
-    'appCode': 'ms0ca95114',
-    'plusCustomBuryPointToken': '1698131788185_4020',
-    '__jdc': '122270672',
-    'joyytokem': 'babel_3jMb3me56Zfmwm1Bep5X4U9L2oJrMDF6SWNLVjk5MQ==.S39acmNCcVVzZkJxUDUTDz9aID4MeDUFKEtlVWdnVngdeShLNyIKOTMhFXwRNgwLDyQuAQYhLjQhKBwMFyArFGYpIQsROTg5IBkwDQgiChdKMS0fPUsENwohNzMieBk8cBQ1KA==.30d530bf',
-    'wxa_level': '1',
-    '__jdb': '122270672.2.1668069089029464342293|167.1699594969',
+    'sc_width': '1920',
+    'jcap_dvzw_fp': 'Qek0u-fd1-86rsSDfbeMvOQkBGTH45iOD2R5nZJlgCsdpfd-6W_i5hraOOXM7BV7BBfediOYx2BxKRtfffrPtw==',
+    'TrackerID': '9y7o2U9vZ83Gx_sZzpAsAfAuDOzdvjwuod0T4MUf1j77PbHzKJshRfutni71jPcv4-0QgYIGsKmuLiteXH7Y5b_VCAZOGYps94vfl8JXzPiqcssgS6ddozqV1jbv6UD0',
+    'pt_key': 'AAJlN4kfADB-rMlqMdhvxqeHmm4CowPlk5s9eKyDeuVHoHC7josmIffTsai51ZIX2dyUigM8SbU',
+    'pt_pin': 'jd_628cc42a655ab',
+    'pt_token': 'gkbglaho',
+    'pwdt_id': 'jd_628cc42a655ab',
+    'sfstoken': 'tk01m99511b95a8sM3gxeDJBNXBhUXIV8uQcGID53SAbZUesaVdYV8l2EkjuFDgbTkXtcjSliG03G29o0nU00eHx/vXO',
+    'whwswswws': '',
+    'cd_eid': 'jdd03FOZMWMMP43LGHUHS5BLNFLD6KPXM7EUJO5ZTK7ZFXZ7ULZYBJLBPEBTL5W56FHXFHWBDAZVGAVITNMUSNPXUDH6HJEAAAAMLMDDIYAQAAAAACT4APRCM75LVU4X',
+    '__jda': '122270672.16855228069111036368777.1685522806.1698138362.1698141439.11',
+    '3AB9D23F7A4B3CSS': 'jdd03FOZMWMMP43LGHUHS5BLNFLD6KPXM7EUJO5ZTK7ZFXZ7ULZYBJLBPEBTL5W56FHXFHWBDAZVGAVITNMUSNPXUDH6HJEAAAAMLMEPARTAAAAAACUR76B6PIHG7GIX',
     '_gia_d': '1',
-    'mba_sid': '1699594969739300327341188256.2',
-    '__jd_ref_cls': 'MPlusCoupon_Get_noticexpo',
+    'wqmnx1': 'MDEyNjM4Ni8ubXNjeXM4NmFkMj00Njc1bChzbCBfZTVLaW9lMHI2ZmEtS1JPRik%3D',
+    '__jdb': '122270672.3.16855228069111036368777|11.1698141439',
+    'mba_sid': '169814143929935712928458531.3',
+    '__wga': '1698141440401.1698141440401.1698139040193.1698135706714.1.3',
+    'jxsid_s_t': '1698141440432',
+    'jxsid_s_u': 'https%3A//coupon.m.jd.com/coupons/show.action',
+    'shshshfpb': 'AAusKHmGLEvMCHW1uXNazrPB6PZbSlBaFUigHRQAAABBqZF82MjhjYzQyYTY1NWFi',
+    '__jd_ref_cls': 'MProductCoupon_WaitGetCoupon',
 }
 
 headers = {
@@ -94,7 +72,7 @@ params = {
     'loginType': '2',
     'loginWQBiz': '',
     'appid': 'plus_business',
-    'body': '{"batchId":1063732465,"platform":3,"eventId":"MPlusCoupon_Get","eid":"7XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4","fp":"a17b431a375db42b8014889d5d64a9dd","activityId":"qyb_1037"}',
+    'body': '{"batchId":1054137305,"platform":3,"eventId":"MPlusCoupon_Get","eid":"7XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4","fp":"a17b431a375db42b8014889d5d64a9dd","activityId":"qyb_1036"}',
     'scval': '',
     '_': '1685522971069',
 }
@@ -106,16 +84,16 @@ def send_request():
     return res
 
 
-
-target_time = datetime.datetime(2023, 11, 10, 16, 0, 0)
+target_time = datetime.datetime(2023, 10, 25, 9, 44, 0)
 time_diff = (target_time - datetime.datetime.now()).total_seconds()
 if time_diff > 0:
     time.sleep(time_diff)
 
-result = True
+count = 10
 
-while result:
+while count >= 0:
     response = send_request()
+    count -= 1
     if response.status_code != 200:
         print('请求失败')
         time.sleep(0.2)

@@ -2,71 +2,61 @@ import requests
 import time
 import datetime
 
+# 王林波ck
 cookies = {
-    '__jda': '122270672.1668069089029464342293.1668069089.1699588680.1699594969.167',
-    'b_dw': '1905',
-    'b_dh': '927',
-    'b_dpr': '2',
-    'b_webp': '1',
-    'b_avif': '1',
-    'shshshfpb': 'AAug1YbeLEg7yo5wUWyRlNuVrILDzmCIKtzs4_wAAAAA',
-    'shshshfp': 'b6ec8c37a67e0e37fd7f25ffacb1dc2b',
-    'shshshfpa': '3910eb4c-77a3-c4d8-4a59-99a21ffd1286-1668069091',
-    'jcap_dvzw_fp': 'MStjxvc74o8PNBQNWwvkqMy4UUC2oFU3mziJBO7xwNEc-qWJfCkVnJtoSp00zaKo8Gu2BA==',
-    '__jdu': '1668069089029464342293',
-    'shshshfpx': '3910eb4c-77a3-c4d8-4a59-99a21ffd1286-1668069091',
-    '3AB9D23F7A4B3CSS': 'jdd037XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4AAAAMLW7ASE3QAAAAAD46WMYSI2ESBNQX',
-    'unpl': 'JF8EAKZnNSttWkgHUEhVHxsRS1QEW10ATkQKbW4BXQoNSl0HGlAdEBB7XlVdXxRLFx9vZhRUXVNPXQ4aAysSEHteVV1ZDUsQAWhiNWRdWUpUBBwLGBsSe15Ublw4SxAEZmYCXFxRQ1UGEwccFxJOXldWXzhKJwNnYDVkbVl7VTUbAhgSFEpdVV9eCk4nSAFmSFRaX0JVAhMDEhoRSFVRWVgKThQAZ2U1VW1b',
-    'pinId': '9zvM1MUZPR30TcKyARJfCQ',
+    'shshshfpa': 'a1ac875a-97fd-0360-ddca-7be66f4ea17b-1685522928',
+    'shshshfpx': 'a1ac875a-97fd-0360-ddca-7be66f4ea17b-1685522928',
+    'jcap_dvzw_fp': 'VQhYkc1IGWetfZywc7VjWr0vrpf3R0DVJXwzlkNqc6EWI9277XCKyqDTY37MvTS8XGE7W4-C9X5d8v9iHF4H4g==',
     'whwswswws': '',
-    'TrackID': '1tBSM6p1R1xOtdo8Uk3GX-Y8nVFQt40bIz_g8DZSq2jTZWhWtugQk-RUP2iijSjmE2xqKwyUs0mcput0vfGAXp0Ea_oKSCbqlcLGorYI9MnvCC1vs8qc5DwZen9N5YLra',
-    'qid_uid': '92095ee1-5b27-46be-8b6a-1bc810458c13',
-    'qid_fs': '1686190520449',
-    'qid_ls': '1686190520449',
-    'qid_ts': '1686190520450',
-    'qid_vis': '1',
-    'mba_muid': '1668069089029464342293',
-    'joyya': '1699588683.1699588686.60.1cfuc41i6',
-    'visitkey': '737803510179678',
-    'TrackerID': '0cg5NqeVDJnY-hI4zwRvGGjRM03e6KG-Z99E9VlA79jCbqTT0JLoyducSj8Rp6C9q-1Dp8PjOLP1yJi_cyie6w5LViY5ZMfo0sJs-4_Ghd8L2Ms4SvO7IAJ36pAGctANIlerdPu9Fi9oZlxhrRS3yg',
-    'cid': '9',
-    'retina': '1',
-    'webp': '1',
-    '__wga': '1699437683562.1699437683562.1699404283878.1690941155328.1.12',
-    '__jdv': '122270672%7Ckong%7Ct_2025416364_%7Cjingfen%7C32bdbf58018a4194b83858fd0830c731%7C1699588682794',
-    'pt_key': 'AAJlNyU4ADDddlzBn2367E81jOV5T9oCvnu9i9wpVn_sMGDkkIffDxxVB9o0YiuTFYufpsuxFdE',
-    'pt_pin': '15951003078_p',
-    'pt_token': 'gff3s2oq',
-    'pwdt_id': '15951003078_p',
-    'ipLoc-djd': '12-904-907-50559',
-    'pin': '15951003078_p',
-    'unick': '%E5%86%A5%E7%8E%8B%E4%B9%8B%E6%AD%8C',
-    '_tp': 'ak3bQDgGku8%2BskP5GCRaiw%3D%3D',
-    '_pst': '15951003078_p',
-    'PPRD_P': 'UUID.1668069089029464342293',
+    '__jdv': '122270672%7Cdirect%7C-%7Cnone%7C-%7C1698135013161',
+    '__jdu': '16855229286681104609334',
     'areaId': '12',
-    'thor': 'BF80140138890A11F2001240DE13FB3F3C61C0880504BFA8A1E9BDE57F39C654C714A1860119787ACEF4F08031825962BD7945907A3EC992BA451EBBE2F664F61EB1AD88765C6EBC5F65B3A1DC4051B057862E6126E0BA088028F91AD9DB2394C37DCB8F4A497A43EA43FEC38B3903F69A9C67E73B817B7EEE16E24C9F6A623F102BD8E2DB796834FAA910C4F31B5B0C',
-    'flash': '2_eNDTpeyjxY4oYUgwJ8A1syjFQD1NtrlyehTmAowLCyXTwHSIv5MafKJmRdTIW7VMB4ap1DmLw-b4chDWOEUYPqrvVXvIDJGSukSwQ7hG8JM*',
-    '3AB9D23F7A4B3C9B': '7XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4',
-    'cn': '5',
+    'ipLoc-djd': '12-904-0-0',
+    '3AB9D23F7A4B3C9B': 'K5GGTC5YGI4BRKEKTFU3GZTJFQWMYXU4LNIB2IV2KGZ6J5XS2TMOYGBJ5ENB7LNQVGHOXRRBXTWEPEMTT5NCTBOWKI',
+    'TrackID': '1TEpqW3lGT8NJ-EehaeM0ymQokMl_vFdVdStVDJNCWKw9aZyMQkzteVV3IoL72JLkmGC81UNxNgLOdbMtIsJzQaaOWsJfSNpXYV_rYUJ8__9rk0LLahRjzUHjZ8-bEwiO',
+    'thor': 'BA62CD15BC9AECD4D884F8D4EFCA1A91545C015D778987A001AE3618D49406D0E9DF82474BC0D41B170D4A9FAF83B19B7E21127252655821DBB0D8D47E4632EFCC7AAA10944C1A7196ABF06E16CCFBEF355B0FE22EDD345ABB5F884A70CA0D04A5139B8C83C7D6ACEACB24E7A48679F3BA93FB0B4F32EE5130DDD24CF8F7DC4EDCC5146F9AB4D5C0398FBF9FD81AB855',
+    'flash': '2_m-E_o61pYD-674wVBHLcPDO2pAQ-mwad50f95bdkXAFNBqshcDKmekKrKdu74A39zKHjaVn44A6nTLk1g9IlSKMCe5PRN9TzVVDHO6BKhIk*',
+    'pinId': 'aGUM9nYLIXQ',
+    'pin': 'KMasker',
+    'unick': '%E7%9A%AE%E4%BA%86%E5%8F%88%E4%BA%86%E7%9A%AE',
     'ceshi3.com': '201',
-    'wlfstk_smdl': 'x3g7lj35l3hytqm7kg9xcvf4ffh84b12',
-    'p-request-id': '15951003078_p2023111013Kmi2b3TfKI',
+    '_tp': '3ou1MpvsFYS%2F2b8QTF90Fw%3D%3D',
+    '_pst': 'KMasker',
+    '__jda': '76161171.16855229286681104609334.1685522928.1686620905.1698135013.4',
+    '__jdc': '76161171',
+    'wxa_level': '1',
+    'retina': '1',
+    'cid': '9',
+    'jxsid': '16981350735591310924',
+    'appCode': 'ms0ca95114',
+    'webp': '1',
+    'mba_muid': '16855229286681104609334',
+    'visitkey': '6975564413381910996',
+    'PPRD_P': 'UUID.16855229286681104609334',
     'share_cpin': '',
     'share_open_id': '',
     'share_gpin': '',
     'shareChannel': '',
     'source_module': '',
     'erp': '',
-    'appCode': 'ms0ca95114',
-    'plusCustomBuryPointToken': '1698131788185_4020',
-    '__jdc': '122270672',
-    'joyytokem': 'babel_3jMb3me56Zfmwm1Bep5X4U9L2oJrMDF6SWNLVjk5MQ==.S39acmNCcVVzZkJxUDUTDz9aID4MeDUFKEtlVWdnVngdeShLNyIKOTMhFXwRNgwLDyQuAQYhLjQhKBwMFyArFGYpIQsROTg5IBkwDQgiChdKMS0fPUsENwohNzMieBk8cBQ1KA==.30d530bf',
-    'wxa_level': '1',
-    '__jdb': '122270672.2.1668069089029464342293|167.1699594969',
+    'jxsid_s_u': 'https%3A//coupon.m.jd.com/coupons/show.action',
+    'sc_width': '1920',
+    'shshshsID': 'e422eceadafe0b33ea3a40a4a7f9dcd8_8_1698135077907',
+    'TrackerID': 'BLZ3FZnC2eaZDFN02lU2PcphVNRvpu0GxuT0yNv91aI1KaBJphWc7y3qHQxcl_h-8iXPYZiqgbIVRd1SwHsQ6RA2VSnovpywQXOAqimH4D6AJZiDYA3EdqWnRcK3ViYE',
+    'pt_key': 'AAJlN3yHADBPJ4dGcxI5XskI_nPxeExjdyZyNcj90jt8Y3dwRYeTAwpmuQlOY6d1UhaDH5kIhWI',
+    'pt_pin': 'KMasker',
+    'pt_token': 'uraadr04',
+    'pwdt_id': 'KMasker',
+    'sfstoken': 'tk01ma2351b65a8sM3gzKzN4MmZH7VnVeCrG5CamV7WixEyE59eieLWoU/iO13PFWoQmoRaA/cB3AvLSZuOMXQjDY834',
+    'wqmnx1': 'MDEyNjM1M3BjbmQvb2hjP2M0YTRjZGFsMTZ0MTM4NjUzMU1sMGNzbk1TMDdwYjU2VGxHKW8xMGEvM2cuNzFGZmFhQjRRRVMpRilI',
+    '__jdb': '76161171.12.16855229286681104609334|4.1698135013',
+    'mba_sid': '1698135073616221496344886196.4',
+    '3AB9D23F7A4B3CSS': 'jdd03K5GGTC5YGI4BRKEKTFU3GZTJFQWMYXU4LNIB2IV2KGZ6J5XS2TMOYGBJ5ENB7LNQVGHOXRRBXTWEPEMTT5NCTBOWKIAAAAMLMC7HH3YAAAAACFDHG4JNVMHDNAX',
     '_gia_d': '1',
-    'mba_sid': '1699594969739300327341188256.2',
-    '__jd_ref_cls': 'MPlusCoupon_Get_noticexpo',
+    '__wga': '1698135176154.1698135073845.1698135073845.1698135073845.2.1',
+    'jxsid_s_t': '1698135176189',
+    'shshshfpb': 'AAj11vmCLEqyHWpf9A2Ddynvmb06hexaFUikoSQAAAAdLTWFza2Vy',
+    '__jd_ref_cls': 'MProductCoupon_WaitGetCoupon',
 }
 
 headers = {
@@ -106,16 +96,16 @@ def send_request():
     return res
 
 
-
 target_time = datetime.datetime(2023, 11, 10, 16, 0, 0)
 time_diff = (target_time - datetime.datetime.now()).total_seconds()
 if time_diff > 0:
     time.sleep(time_diff)
 
-result = True
+count = 10
 
-while result:
+while count >= 0:
     response = send_request()
+    count -= 1
     if response.status_code != 200:
         print('请求失败')
         time.sleep(0.2)
@@ -124,6 +114,7 @@ while result:
     rspCode = json['code']
     if rspCode == "1760001":
         print("领取成功")
+        count = -1
         result = False
     elif rspCode == "1760010":
         print("本场已抢光，下场再来吧")
