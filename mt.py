@@ -1,0 +1,75 @@
+import requests
+
+import requests
+
+cookies = {
+    'token': 'AgH0Ir5r-DShkh8gRV0VUX_0p8zp0LDIx4sJKQwJZ8kYGzsGUcu_aOA_2PmeR9ZN_EpSN0WZckjk9wAAAADWHQAA_hHXLcLldovdCnSBMXFu0isti0fH1KkfyR9ESU3ixV6xA3h1Ui-2E-MCaJSNnrUm'
+}
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:122.0) Gecko/20100101 Firefox/122.0',
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+    # 'Accept-Encoding': 'gzip, deflate, br',
+    'Referer': 'https://market.waimai.meituan.com/',
+    'Content-Type': 'application/json;charset=utf-8',
+    'Origin': 'https://market.waimai.meituan.com',
+    'Connection': 'keep-alive',
+    # 'Cookie': 'IJSESSIONID=node0d4bqd7yxd63013ul6br7qtxul45100730; _lxsdk_cuid=18a4ebc0c21c8-04accbc922e3808-41282c3d-1fa400-18a4ebc0c21c8; _lxsdk_s=18d63dcc72a-9fa-e08-765%7C%7C166; _lxsdk=09471AFFB3E4A37A41A3300DBD94FDB4AE933EC10E5077A1950C26B5E49848FD; WEBDFPID=2843ux0706vy5z16yz9x1705v995z33y81z5vyx69wy9795864v28400-2008898070691-1693538061601OCKIMKKdae4fde6328734eee0d0f7108610a9081705; wm_order_channel=default; utm_source=; au_trace_key_net=default; openh5_uuid=18a4ebc0c21c8-04accbc922e3808-41282c3d-1fa400-18a4ebc0c21c8; uuid=b45290bce1ed497a8a6a.1706777495.1.0.0; isIframe=false; iuuid=09471AFFB3E4A37A41A3300DBD94FDB4AE933EC10E5077A1950C26B5E49848FD; token=AgGkI6Wbsoe8XX5jFcfghtU1Oy7X2fISn9rpFfTaWp_3cfymGA5nDcvNysnNdpfS7NqJmLRxZAm63wAAAAC3HQAARfuMfZyKzOwj5kIThiN4DwctKcCaQ9fw6AK9hhEgtP70fGd3bgWVxw0qhH1mMl2i; mt_c_token=AgGkI6Wbsoe8XX5jFcfghtU1Oy7X2fISn9rpFfTaWp_3cfymGA5nDcvNysnNdpfS7NqJmLRxZAm63wAAAAC3HQAARfuMfZyKzOwj5kIThiN4DwctKcCaQ9fw6AK9hhEgtP70fGd3bgWVxw0qhH1mMl2i; oops=AgGkI6Wbsoe8XX5jFcfghtU1Oy7X2fISn9rpFfTaWp_3cfymGA5nDcvNysnNdpfS7NqJmLRxZAm63wAAAAC3HQAARfuMfZyKzOwj5kIThiN4DwctKcCaQ9fw6AK9hhEgtP70fGd3bgWVxw0qhH1mMl2i; userId=1501510245; u=1501510245; isid=AgGkI6Wbsoe8XX5jFcfghtU1Oy7X2fISn9rpFfTaWp_3cfymGA5nDcvNysnNdpfS7NqJmLRxZAm63wAAAAC3HQAARfuMfZyKzOwj5kIThiN4DwctKcCaQ9fw6AK9hhEgtP70fGd3bgWVxw0qhH1mMl2i; ta.uuid=1752978637768691805; isUuidUnion=true; _lx_utm=utm_campaign%3DAgroupBgroupC0D500E0Ghomepage_search%26utm_source%3Dappshare%26utm_term%3DAandroidBgroupC12.17.407DEG202402011650100000000000000F5142BCE71684477837B90CD1DB012FBA166825282818450603896%26utm_medium%3Dandroidweb',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-site',
+}
+
+params = {
+    'yodaReady': 'h5',
+    'csecplatform': '4',
+    'csecversion': '2.4.0',
+    'mtgsig': '{"a1":"1.1","a2":1706777696991,"a3":"2843ux0706vy5z16yz9x1705v995z33y81z5vyx69wy9795864v28400","a5":"WFyFoAbWRY3BWuAlcs91/OJF0g9fvySLwW==","a6":"hs1.4A7RoRP0dbIKmoIPl+WUiTII5DT4N5vbHgfwTGvYlf4FmXCuX9HozdPXx5cMgai36UHsT4gClDT/5IFifJg327jWXx5MgW3WMgmevHjRJ8Wg=","x0":4,"d1":"aacc609581f1ceb8d99ad3172b3dae3f"}',
+}
+
+json_data = {
+    'couponLocation': 'item5_2',
+    'channelUrlKey': '1516915820',
+    'type': 2,
+    'couponShowId': '3606805002421EB1C6BA6E9B42FF4E3DTOWG2mbUxNxPnbGVaEkKDQ%3D%3D',
+    'couponType': 2,
+    'discountType': 1,
+    'couponAmount': 100,
+    'orderAmountLimit': 999,
+    'latitude': 31.970089,
+    'longitude': 118.764418,
+    'gdVersion': '2',
+    'pageId': 546921,
+    'gdId': 492452,
+    'uuid': '09471AFFB3E4A37A41A3300DBD94FDB4AE933EC10E5077A1950C26B5E49848FD',
+    'clientType': '',
+    'source': 0,
+    'fp_platform': 1,
+    'app_version': '',
+    'wxOpenId': '',
+    'mtFingerprint': 'H5dfp_2.4.0_tttt_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',
+}
+
+
+
+response = requests.post(
+    'https://cactivityapi-sc.waimai.meituan.com/api/coupon/outer/sendV3',
+    params=params,
+    cookies=cookies,
+    headers=headers,
+    json=json_data,
+)
+
+print(response.text)
+
+# Note: json_data will not be serialized by requests
+# exactly as it was in the original request.
+#data = '{"couponLocation":"item5_1","channelUrlKey":"1517575029","type":2,"couponShowId":"2BBCD0BC22EBF8982444D51F5E009E7AKQP%2BhLA6Sww71xBW09aNhA%3D%3D","couponType":2,"discountType":1,"couponAmount":1050,"orderAmountLimit":5400,"latitude":31.970078,"longitude":118.764399,"gdVersion":"2","pageId":546921,"gdId":492452,"uuid":"09471AFFB3E4A37A41A3300DBD94FDB4AE933EC10E5077A1950C26B5E49848FD","clientType":"","source":0,"fp_platform":1,"app_version":"","wxOpenId":"","mtFingerprint":"H5dfp_2.4.0_tttt_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"}'
+#response = requests.post(
+#    'https://cactivityapi-sc.waimai.meituan.com/api/coupon/outer/sendV3',
+#    params=params,
+#    cookies=cookies,
+#    headers=headers,
+#    data=data,
+#)

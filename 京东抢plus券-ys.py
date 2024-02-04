@@ -3,28 +3,51 @@ import time
 import datetime
 
 cookies = {
-    '__jda': '122270672.168553161395165045931.1685531613.1685531613.1685531613.1',
-    '__jdb': '122270672.3.168553161395165045931|1.1685531613',
-    '__jdv': '122270672%7Cdirect%7C-%7Cnone%7C-%7C1685531613951',
-    '__jdc': '122270672',
-    'mba_muid': '168553161395165045931',
-    'mba_sid': '168553161395139230430070194.3',
-    'shshshfpa': '46e58c41-b1b1-630a-29df-d22d6efe6eb3-1685531614',
-    'shshshfpx': '46e58c41-b1b1-630a-29df-d22d6efe6eb3-1685531614',
-    'shshshfpb': 'eZ9wmKnWsgTXCKdo8HNuAsg',
-    '3AB9D23F7A4B3C9B': '5WM32MKU6IE36URUUGQWCNQH74GXMXEONZTMTQQFG4MNBZYLKZJFV4MLYCJBUDFKUPNUOGFR3AQJRJ37EQZLRQKMSU',
-    'jcap_dvzw_fp': 'HQw6LCn35Z09zNvn_3KvU0kVGEWmgk5lN34KCHXqDZPTjskQIMol2oog5ckYzRwhaHWjfcDgfL_ikNsEYJ3euw==',
-    'TrackerID': '9shX0MRxfyfo7-lev6FYSDESkwAK-UgXexPEdYr1KfXMhMoezJy2Is87UN-BYSSwZuNnu2gL4B6wPk0Zts2hw0TPkoIKcy8T9YQn21CUxrmMppo9Ss-xkY0KB2MfYYhHnjUtLgKfB97gM5Ut2hobMA',
-    'pt_key': 'AAJkdyyFADD5fCBMZXfNAnIreR1UDFRK4K9HapVLq-Z0aI7xK9EXXX6vupZSFB5rBNMgA-Jzqro',
-    'pt_pin': 'jd_OBFvMntYZCEI',
-    'pt_token': 'ub4s1w5x',
-    'pwdt_id': 'jd_OBFvMntYZCEI',
-    'sfstoken': 'tk01mb96f1cbea8sMXgyKzErM1lOBO/C3fY+mAVcE5nRhbzIegaVZafDOwJzBLvNzQ6KLbWdVijqDgxEM1to1K7SicuY',
-    'whwswswws': '',
-    'p-request-id': 'jd_OBFvMntYZCEI2023053119ax4EGB0uOv',
     'wxa_level': '1',
-    '3AB9D23F7A4B3CSS': 'jdd035WM32MKU6IE36URUUGQWCNQH74GXMXEONZTMTQQFG4MNBZYLKZJFV4MLYCJBUDFKUPNUOGFR3AQJRJ37EQZLRQKMSUAAAAMIOGC663IAAAAADQFD3KH4MHI23AX',
+    'retina': '1',
+    'cid': '9',
+    'jxsid': '16996023830825887683',
+    'appCode': 'ms0ca95114',
+    'webp': '1',
+    '__jda': '122270672.1699602383118914999994.1699602383.1699602383.1699602383.1',
+    '__jdv': '122270672%7Cdirect%7C-%7Cnone%7C-%7C1699602383118',
+    '__jdc': '122270672',
+    'mba_muid': '1699602383118914999994',
+    'visitkey': '5528059082367291198',
+    '3AB9D23F7A4B3CSS': 'jdd03FOZMWMMP43LGHUHS5BLNFLD6KPXM7EUJO5ZTK7ZFXZ7ULZYBJLBPEBTL5W56FHXFHWBDAZVGAVITNMUSNPXUDH6HJEAAAAMLXAZESLYAAAAACCODYDHPU2U5O4X',
+    '3AB9D23F7A4B3C9B': 'FOZMWMMP43LGHUHS5BLNFLD6KPXM7EUJO5ZTK7ZFXZ7ULZYBJLBPEBTL5W56FHXFHWBDAZVGAVITNMUSNPXUDH6HJE',
     '_gia_d': '1',
+    'cd_eid': 'jdd03FOZMWMMP43LGHUHS5BLNFLD6KPXM7EUJO5ZTK7ZFXZ7ULZYBJLBPEBTL5W56FHXFHWBDAZVGAVITNMUSNPXUDH6HJEAAAAMLXAZESLYAAAAACCODYDHPU2U5O4X',
+    'PPRD_P': 'UUID.1699602383118914999994',
+    'jxsid_s_u': 'https%3A//home.m.jd.com/myJd/newhome.action',
+    'sc_width': '1920',
+    'shshshfpa': '9b8b6af1-0ca2-7190-6818-9188b7b8502f-1699602385',
+    'shshshfpx': '9b8b6af1-0ca2-7190-6818-9188b7b8502f-1699602385',
+    'equipmentId': 'FOZMWMMP43LGHUHS5BLNFLD6KPXM7EUJO5ZTK7ZFXZ7ULZYBJLBPEBTL5W56FHXFHWBDAZVGAVITNMUSNPXUDH6HJE',
+    'fingerprint': 'f320f0d1f7ff9b32be730e297135d108',
+    'deviceVersion': '118.0.0.0',
+    'deviceOS': '',
+    'deviceOSVersion': '',
+    'deviceName': 'Chrome',
+    'shshshsID': '39659dd900b0466b1caca7be221fd9e2_1_1699602385828',
+    'jcap_dvzw_fp': 'Fyvl0L3U5sSqZWvQ3-f2IpngeNtyGZQ5JL8sLpk4xul4tNOLSE9j1xpp5813mhlz70m1-Uk_89f3kl-kruD1qA==',
+    'TrackerID': 'vgxzW76vjqxJFqCUEHYQN3YFLlGhHvviCK7_tCQn4Hp-KoEl7Wudj1xVr6tNvFbKTlYswgV73Vyd_9c4Jt3G3Lp4pdG7zr4PPTompp48VUt5QtDi_wuyoGoK964MJlDN',
+    'pt_key': 'AAJlTeAFADDPwLYrdFVB97Ahh6FEkOgGG-yWf6Tn8S3pbvAxLblM_yEKEOVSMfPe4kVF3ZOi7yw',
+    'pt_pin': '13605176365_p',
+    'pt_token': 't4kfikcf',
+    'pwdt_id': '13605176365_p',
+    'sfstoken': 'tk01mcdc21d1fa8sMSsyeDF4MzJhbEfnqCju2WcHjS/y7tgR0pyJ/2KHd3mEKlb2gjmsmrnJdAXVjNSNXln+XJovq0Ww',
+    'whwswswws': '',
+    'wqmnx1': 'MDEyNjM2MGgvLmNKaGMxNTY5bDBpO2xPMClldDNUaWNoMTBmMzFmNGZCS1lDRkYoJQ%3D%3D',
+    '__wga': '1699602438615.1699602385293.1699602385293.1699602385293.2.1',
+    'jxsid_s_t': '1699602438638',
+    'shshshfpb': 'AAtcaM7iLEotq8QyicZBoGJGIt7hQLxaZYCOFQgAAAA0xMzYwNTE3NjM2NV9w',
+    'plusCustomBuryPointToken': '1699602444368_4020',
+    'ipLoc-djd': '12_904_3379_0',
+    'p-request-id': '13605176365_p2023111015ACA7tU0KJU',
+    '__jdb': '122270672.9.1699602383118914999994|1.1699602383',
+    'mba_sid': '16996023831207719353334669090.9',
+    '__jd_ref_cls': 'MPlusCoupon_Get_noticexpo',
 }
 
 headers = {
@@ -52,7 +75,7 @@ params = {
     'loginType': '2',
     'loginWQBiz': '',
     'appid': 'plus_business',
-    'body': '{"platform":3,"eventId":"MPlusCoupon_Get","eid":"7XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4","fp":"79200d27ab9ac3494099138863293fa0","activityId":"qyb_1006"}',
+    'body': '{"batchId":1063732465,"platform":3,"eventId":"MPlusCoupon_Get","eid":"7XZ4KFNKG3RR5LLS4T52YX7GCCIVGQ2465FGEM3SYK7OXUT7FDIKO5PDRC3QC2IRK2KKOJV2QZXZUL727RCLFSHNS4","fp":"a17b431a375db42b8014889d5d64a9dd","activityId":"qyb_1037"}',
     'scval': '',
     '_': '1685522971069',
 }
@@ -65,7 +88,7 @@ def send_request():
 
 
 
-target_time = datetime.datetime(2023, 5, 31, 22, 0, 0)
+target_time = datetime.datetime(2023, 11, 10, 16, 0, 0)
 time_diff = (target_time - datetime.datetime.now()).total_seconds()
 if time_diff > 0:
     time.sleep(time_diff)

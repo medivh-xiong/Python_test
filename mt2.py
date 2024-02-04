@@ -10,11 +10,11 @@ import requests
 
 CK_LIST = [
     ('2',
-     'AgGpJINTdfQP_cUIF6EpcfWWyxURW8XZoGlmbgPmg0GpTDij4CvT_ezJdAS4-1F1a4HmaxRn0nPbUgAAAACXGAAAlAATKVhEN4Y5Z4eOwSRcnetU0eQC5mV60WHLy9qG3QSw-WY8E9Pzxou7X0IVdJ3i'),
+     'AgH0Ir5r-DShkh8gRV0VUX_0p8zp0LDIx4sJKQwJZ8kYGzsGUcu_aOA_2PmeR9ZN_EpSN0WZckjk9wAAAADWHQAA_hHXLcLldovdCnSBMXFu0isti0fH1KkfyR9ESU3ixV6xA3h1Ui-2E-MCaJSNnrUm'),
 ]
 
 couponReferId = '4F2DAF7D9A3A496F8A4E0E8D8CDD7EBE'
-kaishi = "18:39:59"
+kaishi = "1:18:59"
 
 gdPageId = "493088"
 url = f"https://promotion.waimai.meituan.com/lottery/limitcouponcomponent/fetchcoupon?couponReferId={couponReferId}&gdPageId={gdPageId}"
