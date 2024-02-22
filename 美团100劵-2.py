@@ -7,6 +7,8 @@ import datetime
 from asyncio.futures import concurrent
 import requests
 from datetime import datetime, timedelta
+import logging
+
 
 CK_LIST = [
     ('ys1',
@@ -29,7 +31,6 @@ params = [
 ]
 
 url = "https://cactivityapi-sc.waimai.meituan.com/api/coupon/outer/sendV3"
-
 
 async def qiang_shenquan(ck):
     async with aiohttp.ClientSession() as session:
@@ -100,13 +101,13 @@ async def qiang_shenquan(ck):
 async def qiang_shenquan_wrapper():
     print("开始抢卷")
     tasks = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         loop = asyncio.get_event_loop()
         for ck in CK_LIST:
             # 将每个 CK 对象分别放入两个不同的线程池中并行执行两个协程
             task1 = loop.create_task(qiang_shenquan(ck))
-            task2 = loop.create_task(qiang_shenquan(ck))
-            tasks.extend([task1, task2])
+            # task2 = loop.create_task(qiang_shenquan(ck))
+            tasks.extend([task1])
     # 等待所有任务完成
     await asyncio.gather(*tasks, return_exceptions=True)
 
