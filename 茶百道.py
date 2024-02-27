@@ -6,37 +6,35 @@ from asyncio.futures import concurrent
 import aiohttp
 
 CK_LIST = [
-    ('大号-2',
-     'pSYWfuYsuK8KScBxQ2nWBF2vyBY0r05gY4JveqMgJoIRK-drcEqcbPT0raFVy3I3'),
-    ('华为-1',
-     'B-rlPO00gfN1S-C9xCaXKeefkHqLI6GwR53geGaa-gNEUHxvoxyHeUpH7HkpiQbV'),
-    ('小米10-2',
-     'Zoh6di8MRCSxVDsABlju23fgI1e9cWga1jcx_Ymt12_SKfsZ6tnNpSrlv3p_BGxS'),
-    ('k40-1',
-     'C-qC-SGyQl4_3iCpTGb-cG3UlF3tbmlA1G1kw2YqPHOXJJ6MT5oI8iIGNaO8pZSr'),
-    ('小米8-2',
-     'bejpq94rgdpfitf982XbYXevrucbUidmdZ-ZL2VZYm4mZaPqVjUDTOVkeb6LruYC'),
+    ('大号',
+     '1708928493|JLqPCCh3qtqMUQa9.rZA4rfk+kLB+FepihYI0UJqgmaI6P64qETcq8TvG7/3aaV1SvvhK8f1SuQI91OcLMcb2zNu3JAZM4HapPUGTVQ==.9e52948ab6f5e127'),
 ]
 
 headers = {
-    'Host': 'qmwebapi.qmai.cn',
-    'Accept': 'v=1.0',
-    'content-type': 'application/json',
-    'qm-trace-store-id': '49006',
-    'Qm-From': 'wechat',
-    'Qm-From-Type': 'catering',
-    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.46(0x18002e2c) NetType/WIFI Language/zh_CN',
-    'Referer': 'https://servicewechat.com/wxafec6f8422cb357b/143/page-frame.html',
+    'Host': 'chabaidao-gateway2.shuxinyc.com',
+    'Accept': '*/*',
+    'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
+    'versionName': '3.3.090',
+    'Content-Type': 'application/json',
+    'versionCode': '33090',
+    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E217 MicroMessenger/6.8.0(0x16080000) NetType/WIFI Language/en Branch/Br_trunk MiniProgramEnv/Mac',
+    'Referer': 'https://servicewechat.com/wx2804355dbf8d15c3/629/page-frame.html',
 }
 
 json_data = {
-    'activityId': '961633325138382848',
-    'keyWords': '以茶会友会友为龙',
-    'appid': 'wxafec6f8422cb357b',
+    'groupId': '317964',
+    'memberSystemId': '21',
+    'id': '5706',
+    'activetype': 23,
+    'unionId': 'ofD9L5h6ZXUikYFiMckY4EPQIclw',
+    'shopId': -1,
+    'cardId': '7116075994150115852',
+    'mobile': '15951003078',
+    'memberName': 'hash(闭关中)',
 }
 
 startTime = "2024-02-08 11:17:0"  # 抢购时间填进去几点就是几点跑
-url = "https://qmwebapi.qmai.cn/web/cmk-center/receive/takePartInReceive"
+url = "https://chabaidao-gateway2.shuxinyc.com/marketing/minip/activity/joinActivity"
 
 
 async def seek():
@@ -66,7 +64,8 @@ async def bwcj(ck):
         running = True
         while running:
             try:
-                headers['Qm-User-Token'] = ck[1]
+                headers['CSESSION'] = ck[1]
+                json_data['token'] = ck[1]
                 async with session.post(url=url, headers=headers, json=json_data) as response:
                     result = await response.text()
                     now = datetime.now()
@@ -75,12 +74,12 @@ async def bwcj(ck):
                     if result.find('已达上限啦') != -1:
                         print(f'{ck[0]}领取成功！！！\n')
                         running = False
-                    elif result.find('已被领完') != -1:
+                    elif result.find('礼品已经送完') != -1:
                         print('已经领完了\n')
                         running = False
                     else:
-                        print('领取失败, 重新领取\n')
-                        await asyncio.sleep(2)
+                        print(f'{ck[0]}领取失败, 重新领取\n')
+                        await asyncio.sleep(0.5)
             except Exception as e:
                 print(f'{time_str}:[{ck[0]}]:{str(e)}')
 
