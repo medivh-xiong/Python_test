@@ -3,9 +3,10 @@ import time
 import datetime
 
 
+
 cookies = {
-    'MSESSIONID': 'd16ffed8-beeb-4e9b-9d15-639c55fef6f6',
-    'smidV2': '20240221085727b46b5c497d5afd3d8dbb0bb5c4f272a600e8af342771d94e0',
+    'MSESSIONID': '63e83b0c-e850-494a-8975-365a69607db1',
+    'smidV2': '20240313085737e7232efb38a7f8bc9d8a59b59e01fe260021776ccf6ff8b70',
     'UqZBpD3n3iTJDwxS': 'v1PKB+g8Sc+75',
 }
 
@@ -22,18 +23,17 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 /sa-sdk-ios/sensors-verify/ibfp.psbc.com?credit  CreditCardAppNew',
     'Referer': 'https://psbc.huajifen.com/impFront/voucherOrder?productId=103137&promotionId=19846&campId=10131&groupIndex=0&groupId=27885&configDiscribe=%E5%A5%96%E5%8A%B1%E7%82%B9',
     'Sec-Fetch-Dest': 'empty',
-    # 'Cookie': 'MSESSIONID=41893c30-b100-4798-ab09-e8b249f0f722; smidV2=202402200941193bd9d44246a222b4b26eebe0cbbcc76a00409f66c46296840; UqZBpD3n3iTJDwxS=v1PKB+g8Sc+75',
+    # 'Cookie': 'MSESSIONID=63e83b0c-e850-494a-8975-365a69607db1; smidV2=20240313085737e7232efb38a7f8bc9d8a59b59e01fe260021776ccf6ff8b70; UqZBpD3n3iTJDwxS=v1PKB+g8Sc+75',
 }
-
 
 json_data = {
     'mobileNo': '15951003078',
     'productId': 103137,
     'promotionId': 19846,
     'accountNo': '',
-    'sign': 'lD5lVRaWnTwu5GW8pfK+Db7ASvbHOfiiaClzHyVb7co=',
+    'sign': 'IkYiMDJuOAiK9B+dRmamlVPketrybluUVy8cig0XgXk=',
     'cardInfo': {
-        'cardNoAlis': '6259******8131',
+        'cardNoAlis': '**********8131',
         'id': 2189046,
     },
     'promProdInfo': {
@@ -62,7 +62,7 @@ def send_request():
     return res
 
 
-target_time = datetime.datetime(2024, 2, 21, 9, 0, 0)
+target_time = datetime.datetime(2024, 3, 13, 9, 0, 0)
 time_diff = (target_time - datetime.datetime.now()).total_seconds()
 if time_diff > 0:
     time.sleep(time_diff)
@@ -79,7 +79,7 @@ while result:
         print('还未开始')
         time.sleep(10)
         continue
-    elif response.text.find('很抱歉,您目前尚未具备资格'):
+    elif response.text.find('领取次数超过商品限制兑换次数') != -1:
         print('领取成功')
         exit()
     else:

@@ -195,8 +195,8 @@ def xiaomi_prepare():
 
 def xiaomi_schedule():
     # 报名
-    # join(xiaomi_prepare())
-    xiaomi_buy()
+    join(xiaomi_prepare())
+    # xiaomi_buy()
 
 def xiaomi_request(activity_id):
     buy_headers = {
@@ -260,7 +260,7 @@ def query_url_params(url, param):
 
 
 def xiaomi_buy():
-    target_time = datetime.datetime(2024, 2, 27, 9, 0, 0)
+    target_time = datetime.datetime(2024, 2, 27, 10, 0, 0)
     activity_id = xiaomi_prepare()
     time_diff = (target_time - datetime.datetime.now()).total_seconds()
     if time_diff > 0:

@@ -9,66 +9,62 @@ import requests
 from datetime import datetime, timedelta
 import logging
 
-
 CK_LIST = [
-    ('ys1',
-     'AgFnJNaRvxj8OZIk5XkUSbEJ922enAeypKxyxPej5AEtmwcpNIZVzuUkyQVGmG3cMcz3RTWtsrK_eAAAAADWHQAAp8WG3d2rrtdAd7V1_E3Mz0UyC7Wyh_5T1je9DBfaAumcUAYwuhpKEVloFPLpnBDb'),
-    ('ys2',
-     'AgFaJCYr5tLkvCTcpHdpOLWt4HAsOpaaY4wapS8RV_nY6tT3Z1YKM1dQevQZONTMkSmcWdmShJAJ6gAAAAC3HQAACD7cuip22PG_t8ffeiPYoYqQjj_yff2wSf30CfpqLQTePy0wrtEsp1izqJhyUzS_'),
-    ('ys3',
-     'AgGRJMuGR0V_E4SmBVfP7Qd2XHc2h-X8Dg232L7NkZF9ulj_FXXXyV37LwFXo5_Fv8isPrn8xxuYawAAAADWHQAAT-rWIEd5nS5HQxqOoYGGh6dxtU7xSdnr4-RL28lYJMpzuRo-Lo5HociIa06rF7Q1'),
+    ('大号',
+     'AgGoHpFlA_n8y9TqOxdr_4vpfdTC6nPfuk4qPH5VyFc7OgScKp1lbfs7Wz_j8wrcDYKZUCElPGKlDwAAAAB_HgAAWreOMRDO89XAN5wSRVAPVGAQG5E6dl8TlXaVgET2E_jtGpHN5LFiNd8wJ_F_Vh47'),
 ]
 
-startTime = "2024-02-04 0:0:0"  # 抢购时间填进去几点就是几点跑
+startTime = "2024-03-08 13:0:0"  # 抢购时间填进去几点就是几点跑
 couponReferId = ""
 
 params = [
+    ('couponReferId', 'CD3E100EAAB54673A36BF507FA311429'),
+    ('geoType', '2'),
+    ('gdPageId', '549085'),
+    ('pageId', '556519'),
+    ('version', '1'),
+    ('utmSource', 'AppStore'),
+    ('utmCampaign', '1'),
+    ('instanceId', '17095594923790.010483167848327035'),
+    ('utmCampaign', '17095594923790.010483167848327035'),
+    ('componentId', ''),
+    ('ctype', ''),
+    ('utmMedium', 'iphone'),
+    ('gSource', ''),
+    ('dpSource', ''),
     ('yodaReady', 'h5'),
     ('csecplatform', '4'),
-    ('csecversion', '2.4.0'),
-    ('mtgsig',
-     '{"a1":"1.1","a2":1706777696991,"a3":"2843ux0706vy5z16yz9x1705v995z33y81z5vyx69wy9795864v28400","a5":"WFyFoAbWRY3BWuAlcs91/OJF0g9fvySLwW==","a6":"hs1.4A7RoRP0dbIKmoIPl+WUiTII5DT4N5vbHgfwTGvYlf4FmXCuX9HozdPXx5cMgai36UHsT4gClDT/5IFifJg327jWXx5MgW3WMgmevHjRJ8Wg=","x0":4,"d1":"aacc609581f1ceb8d99ad3172b3dae3f"}'),
+    ('csecversion', '2.3.1'),
 ]
 
-url = "https://cactivityapi-sc.waimai.meituan.com/api/coupon/outer/sendV3"
+url = "https://promotion.waimai.meituan.com/lottery/limitcouponcomponent/fetchcoupon"
+
 
 async def qiang_shenquan(ck):
     async with aiohttp.ClientSession() as session:
         for i in range(50):
             try:
                 headers = {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:122.0) Gecko/20100101 Firefox/122.0',
+                    'Host': 'promotion.waimai.meituan.com',
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json, text/plain, */*',
-                    'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
-                    'Referer': 'https://market.waimai.meituan.com/',
-                    'Content-Type': 'application/json;charset=utf-8',
-                    'Origin': 'https://market.waimai.meituan.com',
-                    'Connection': 'keep-alive',
-                    'Sec-Fetch-Dest': 'empty',
-                    'Sec-Fetch-Mode': 'cors',
                     'Sec-Fetch-Site': 'same-site',
+                    'dj-token': 'BUtNUwMAAABuBktNUwMaOQIAAAABO5rMWgAAACyQ2GvX3flmYoryInDPvI1DDK2AF3V0UiUO+OgBR8h7goamLPbE41wOQcM4YCIsjaOwh2+TNk5PA6kuaOH0P3lz4ChL1E17vO9tmcuAVPAstXZB+MKX81EzgHQAAABOj0aAcMzCpbw3bQAVnmJ91X8QvoOKTZWtR+GkMJadI4+11ND+YAw+92ZFJQOiOSDvUtMQbfekPQZxU1xv3ksHAqV7PwZAh+V/AMcg6Ppj',
+                    'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
+                    'Sec-Fetch-Mode': 'cors',
+                    'Origin': 'https://market.waimai.meituan.com',
+                    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 TitansX/20.25.1 KNB/1.0 iOS/16.5.1 meituangroup/com.meituan.imeituan/12.18.402 meituangroup/12.18.402 App/10110/12.18.402 iPhone/iPhone8 WKWebView',
+                    'Referer': 'https://market.waimai.meituan.com/',
+                    'mtgsig': '{"a0":"3.0","a1":"6f50fb51-23ee-4173-ab33-6ee69ed0ef29","a3":24,"a4":1709787600,"a5":"kHTSBJPmiiZI5IE/J5se3tKxwVOPmVkACeruh5EdRn3cPpSV9lroHdk4rWMthSGCGqQnewHtBNaIMMjNbXL5y/spuYmKEm1D0tOqDs2JKMkU9aE+s9xnnrBqAQ+KKDoTiqmGWD/ZlNPUNbTVHiz2D50vlwW2Qeco6B1KeI+lnPa2xurrW1PiMhqt2jdoqaKhVI+QsQTmQEwJu16t+qPdUwgUXxjIFJ6M+UZhR/ZJsDeAQ8/4tjtLZ2wVl1dExMZ/4e/MbcM3C1Jr4Ty6eq+Z3INbEFMEs47od1uELtvzGkht9HugAHtQRSk3S1kiNE5IvhALVeCZafoi9qIA9Mx7wLogWLCrsmCpNBUwmGyzj149VHmG28nsAVow5AxoqZbHMM6dGQWoV98EvohcLOti0k23mA==","a6":0,"a7":"zSLG1xQ/F1+OxH+DOexwOMCarm1XMRhygTJ5FR8ONUPGLjgGOEaaq2+nVF7pVITvCcPft2A1NgsZvcl4mhX49xgxeDVpLfuMqwH9wHwGpjs=","a8":"39a2c331f8b489e9dd2f800cd1a1453d9200ff18cff2a81d244e77e5","a9":"2913f87dmuYzzgjCGueSANTuDHNTdzzMhrbFaALEgbRHRTT6pDRT4TEmcYohjk/qwSyhAr35tF/1KUXQ9OtuwEAMzcuVfMw/jouhGROSZsWtsEA+JZ3pw6Aesa4aUKois00fMThoE73Vg0AsBvN+OH2SUAzltKOGcfOKPmMEIzFnWAMVl5bUUy5oz7z3C4u2TBLO9SWByLMCxdg4c95Rl0m6kzNpHS3E0c9v3HcMlowWKDI3xsatvCwImQN7edhjj5CS/BPJ+Z5Mfneag4xIRa5GkbLHdGiqSPPCTQyA3ohxVhm7KZtfXBEYfwhpuyWcGEjBLghFyLMbpPzQxljz6BT+G9lwIxrsVO49mAlAFlneeswLalpMvveNL+/7z8vdLIhZi3LfbkCWQvxqVOIiVxZoXzxGUgZ9aH/uA1OlcVW6Xk+Guib8TUtD2UV3yCTRDSDfxoZDlwgrk0FUP2Ug/VYW1lVig3895nPNpKXy78ph4UGttx/ORxPZO8zFvwUSgjYrKXnVW/aWPfmtzwc17Q4ILr8Km5oKjZJNTbROvuDsV9XTsoEl/rWee0T1lY1sXt8y2xc/BalIiroFwGAFOAjiyljlgEB2oafzh4t5wVC8Y+vQKsxaBeox247wAHERvCIKRMKBA+O9upNWcFQ3NaVAlCuKxfjUJTpZ7SWdmHnOPE5AXZJi0WOqiIHBjdCWUps3/fCN0XEHQpJU4/ttijJ/qQ8OC5MO6h1YM1u39yKUyfkNcVvdmMJWGPjOdBThjFwSSv8B","a10":"5,186,1.1.8","x0":2,"a2":"8c8abc70faa46ec80fbb1eeb156e36ea"}',
+                    'Sec-Fetch-Dest': 'empty',
+                    # 'Cookie': 'isUuidUnion=true; iuuid=0000000000000A73DDC9201C9499BA2134A99A5C759CDA168460156076763327; network=wifi; _lx_utm=utm_campaign%3D1%26utm_term%3D12.18.402%26utm_source%3DAppStore%26utm_content%3D0000000000000A73DDC9201C9499BA2134A99A5C759CDA168460156076763327%26utm_medium%3Diphone; WEBDFPID=8v1z6z5673065347yv181798y169504981w4ww099yy979586w45u233-2022036519293-1706676519293MUIUQME868c0ee73ab28e1d0b03bc83148500061515; _utm_campaign=AgroupBgroupD100H0; _utm_content=0000000000000A73DDC9201C9499BA2134A99A5C759CDA168460156076763327; _utm_medium=iphone; _utm_source=AppStore; _utm_term=12.18.402; cityid=55; dpid=; token=AgFDLHvIf7vI-7q5Gb5QwshDSeBc54wqXvlmuajfZLfSCz-78wD-d0lYbp30nMYe2FKhcCWSWtSL4xEAAABgHgAAYJjikhPA3nduOULpRDv5CGeBVfhdtk8SvDWZ2OYQTqMNcvY7FcLNc7OGKTtKwfXXMVD2NAfImuiEdeX7MNQPlQ; uuid=0000000000000A73DDC9201C9499BA2134A99A5C759CDA168460156076763327; mt_c_token=AgFDLHvIf7vI-7q5Gb5QwshDSeBc54wqXvlmuajfZLfSCz-78wD-d0lYbp30nMYe2FKhcCWSWtSL4xEAAABgHgAAYJjikhPA3nduOULpRDv5CGeBVfhdtk8SvDWZ2OYQTqMNcvY7FcLNc7OGKTtKwfXXMVD2NAfImuiEdeX7MNQPlQ; ta.uuid=1752554450864390169; _lxsdk=0000000000000A73DDC9201C9499BA2134A99A5C759CDA168460156076763327; _lxsdk_cuid=18d5dd8eb65c8-0bef285aee3a56-6e7f2023-3d10d-18d5dd8eb66c8; _lxsdk_dpid=a73ddc9201c9499ba2134a99a5c759cda168460156076763327; _lxsdk_unoinid=a73ddc9201c9499ba2134a99a5c759cda168460156076763327',
                 }
                 payload = {
-                    'couponLocation': 'item5_2',
-                    'channelUrlKey': '1516915820',
-                    'type': 2,
-                    'couponShowId': '3606805002421EB1C6BA6E9B42FF4E3DTOWG2mbUxNxPnbGVaEkKDQ%3D%3D',
-                    'couponType': 2,
-                    'discountType': 1,
-                    'couponAmount': 100,
-                    'orderAmountLimit': 999,
-                    'latitude': 31.970089,
-                    'longitude': 118.764418,
-                    'gdVersion': '2',
-                    'pageId': 546921,
-                    'gdId': 492452,
-                    'uuid': '09471AFFB3E4A37A41A3300DBD94FDB4AE933EC10E5077A1950C26B5E49848FD',
-                    'clientType': '',
-                    'source': 0,
-                    'fp_platform': 1,
-                    'app_version': '',
+                    'cType': 'mtiphone',
+                    'fpPlatform': 5,
                     'wxOpenId': '',
-                    'mtFingerprint': 'H5dfp_2.4.0_tttt_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',
+                    'appVersion': '12.18.402',
+                    'mtFingerprint': 'i2HKpOmsirDPavelVfQBZOQmtrzeq+1nOcGupX4lqdbh0o51x/aLJnFZgOxGOjYq+VH4oUTz5JB4XgV1Jnbzj3Mg18tj5Q+xHXdLhW2PxmDs4Nyqgo9gcDTT+9stXI7pp/YRx+g1XK+r6xskb/dXxEex/ye3eSEEE0nE3rXMtMzNVQZZe8zJSEr18aPCpN9n/ROMLvI/ntH8fFaoDKBp8g79i64R/bSb4oeHx9X5AusaT7ynUlYspVrP1KCZKgDX7pe/9J7wj9i2okZ06Hzk1UuGQsNaWUnjEQ6eO5dwHeyYEhU1W2PSRjjbORNw0ZqCEEEegpr51ctpp7/XayRX5lRT4K2iTCr3Zh5LOtsN9Nwxbj8v9fGAkTbp9N22f4Q/eaoGVYyFXhC+jqo2BtsREJrzk+0wsZkNonkjYCyXGfMv5E8MwPf7QAM4YPNRurcDJ/CRKeOgBkbaRtRdq/5wbi5WD7McJf/VJPZEuwx7ZTVkP+Tew5FDD7U82M/cvRP3eeBy96bwSI3WJomfqo2w4uO7N8cKGJbAbZ+8JXVuS8BzP74qjMp9E5XBw5AJHQqY0oE6WXgpbhbQRE4jUrrcivxptPQWgDUmLUQ4VrgK/bbHBwgOMvDx+Iywo91fVGUqkx34LqR3K9xE0R9Bt8nrfYNv4zrPao5RdAJqvT5V9ZLGY3X2HFuZsnFtRaLPFuQPQ4OH9bJ38ECvjmKYBSgY/MrNNs0cJCoygwCLJfTKkUUr6k/rvhyRog1ye3gS+5i2f+HRwupGCMHzgbgF0OR6PI+nGDJ3EVFvKMlIBj/GPg5720vqxi8CC+0KNcwWbQPhXPWusT45OLOTIDcodyQy9gSCt79jj/tWbyB+pGNF8uXqCv2KoNUU33NyvcSltiroOpgC1qovKb+ArZD1Mccwcm4vh1uTFLCPJk1qy0SZLs4Q5FLQ+ZUXOAx9mfOcJCMkDRmJ84+GaijWjwkOY9/SGJTOdzSc1dh7rqD1FuR8OWGIqAZ7qix7My570Yi77PDoQBhiE3a7/yggaSMkib2AK7qEA4BdSskosNEhyPotGIriLLypO3Z98zBmfboOWPMDceIO5RaTBFJOP0iDki/Yf0oiP6o2MZBWt4MJAxvJZ00XkwFH78/tf6blaSj3MvA+tHUrovt3JF7n+Kj5AnBHmuGZDThn/L3nkgg7uoFaGpT9IXD2BGbEunLc9MprBWiO03HdcSDv2NehsqTLOLSUPrsor7xajdv78siCH5hlbhdboH3F41yPSnWSCXRYWPxvUhC9ZzvhccPUYviNi0kH40eHjzZsvSSWWjfIw4ipK14fCp5YFAB+/B+QuEmc6B+yTfW/v//CoDJweNEsvVmfwzeRdIO19JTp+DPUXm1VllIjui28uzob8Dxe/oWFuWngE18xYUqJl7QZPy3Xq4HY9PyIva1JMqKZNkougIQaO4qzlkhxCooZ1CZ32riXMyPa',
                 }
 
                 cookies = {
@@ -78,21 +74,14 @@ async def qiang_shenquan(ck):
                 async with session.post(url=url, params=params, headers=headers, json=payload,
                                         cookies=cookies) as response:
                     result = await response.text()
-                    result_json = json.loads(result)
-                    msg = result_json.get("data", result).get('receiveCode')
-                    print("-----------------")
-                    print(result_json)
-                    print("-----------------")
                     now = datetime.now()
                     time_str = now.strftime("%H:%M:%S:%f")[:-3]
-                    print(f'{time_str}:[{ck[0]}]:{msg}')
-                    if msg == 2 or msg == 1:
-                        print(f'{ck[0]}领取成功！！！')
-                        print('-------结束')
-                        break  # 如果已经领取到了代金券，就退出循环
-                    elif msg == 3:
-                        print('券已经抢光')
-
+                    print(f'{time_str}:[{ck[0]}]:{result}')
+                    if result.find('抢卷成功') != -1:
+                        print(f'{ck[0]}:成功')
+                        break
+                    else:
+                        await asyncio.sleep(0.6)
             except Exception as e:
                 # print(f'{time_str}:[{ck[0]}]:{str(e)}')
                 continue  # 如果发生异常，继续尝试下一轮
