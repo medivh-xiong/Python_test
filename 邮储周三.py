@@ -5,9 +5,9 @@ import datetime
 
 
 cookies = {
-    'MSESSIONID': '63e83b0c-e850-494a-8975-365a69607db1',
-    'smidV2': '20240313085737e7232efb38a7f8bc9d8a59b59e01fe260021776ccf6ff8b70',
-    'UqZBpD3n3iTJDwxS': 'v1PKB+g8Sc+75',
+    'MSESSIONID': '1d3d9de7-be16-40f7-a583-e65c6c373531',
+    'smidV2': '20240320085556b70849b456d37af7c2d6bc2b23ff7cc500138c004e120ba10',
+    'UqZBpD3n3iTJDwxS': 'v1OqB+g8ScR84',
 }
 
 headers = {
@@ -23,7 +23,7 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 /sa-sdk-ios/sensors-verify/ibfp.psbc.com?credit  CreditCardAppNew',
     'Referer': 'https://psbc.huajifen.com/impFront/voucherOrder?productId=103137&promotionId=19846&campId=10131&groupIndex=0&groupId=27885&configDiscribe=%E5%A5%96%E5%8A%B1%E7%82%B9',
     'Sec-Fetch-Dest': 'empty',
-    # 'Cookie': 'MSESSIONID=63e83b0c-e850-494a-8975-365a69607db1; smidV2=20240313085737e7232efb38a7f8bc9d8a59b59e01fe260021776ccf6ff8b70; UqZBpD3n3iTJDwxS=v1PKB+g8Sc+75',
+    # 'Cookie': 'MSESSIONID=1d3d9de7-be16-40f7-a583-e65c6c373531; smidV2=20240320085556b70849b456d37af7c2d6bc2b23ff7cc500138c004e120ba10; UqZBpD3n3iTJDwxS=v1OqB+g8ScR84',
 }
 
 json_data = {
@@ -31,7 +31,7 @@ json_data = {
     'productId': 103137,
     'promotionId': 19846,
     'accountNo': '',
-    'sign': 'IkYiMDJuOAiK9B+dRmamlVPketrybluUVy8cig0XgXk=',
+    'sign': 'IkYiMDJuOAiK9B+dRmamlUcKTYhSvMPjjVvXjpzhuM0=',
     'cardInfo': {
         'cardNoAlis': '**********8131',
         'id': 2189046,
@@ -62,7 +62,7 @@ def send_request():
     return res
 
 
-target_time = datetime.datetime(2024, 3, 13, 9, 0, 0)
+target_time = datetime.datetime(2024, 3, 20, 9, 0, 0)
 time_diff = (target_time - datetime.datetime.now()).total_seconds()
 if time_diff > 0:
     time.sleep(time_diff)
@@ -80,6 +80,9 @@ while result:
         time.sleep(10)
         continue
     elif response.text.find('领取次数超过商品限制兑换次数') != -1:
+        print('领取成功')
+        exit()
+    elif response.text.find('"success":true') != -1:
         print('领取成功')
         exit()
     else:

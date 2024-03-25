@@ -3,8 +3,8 @@ import time
 import datetime
 
 cookies = {
-    'sid': 'MCALOGIN-aabe6fc9-59ac-4cb7-a72b-c652b0abd66c',
-    'act_sid': 'act-24077338-0305-4473-8ffe-3d7c04e6ac0c',
+    'sid': 'MCALOGIN-bae9d49f-c789-4f27-a57b-d7717261c950',
+    'act_sid': 'act-44f27e34-27ad-44ca-88d1-c1c52f70952b',
 }
 
 headers = {
@@ -18,16 +18,16 @@ headers = {
 }
 
 json_data = {
-    'prizeNo': 'JFMS20233007',
+    'prizeNo': 'JFMS20234004',
 }
 
 def send_request():
-    res = requests.post('https://ump.cmpay.com/activities/v1/members/integralTicketReceive', headers=headers, cookies=cookies, json=json_data)
+    res = requests.post('https://ump.cmpay.com/activities/v1/members/integralTicketReceive', headers=headers, cookies=cookies, json=json_data, timeout=2)
     print(res.text)
     return res
 
 
-target_time = datetime.datetime(2024, 2, 28, 10, 0, 0)
+target_time = datetime.datetime(2024, 3, 20, 10, 0, 0)
 time_diff = (target_time - datetime.datetime.now()).total_seconds()
 if time_diff > 0:
     time.sleep(time_diff)
@@ -38,7 +38,7 @@ while result:
     response = send_request()
     if response.status_code != 200:
         print('请求失败')
-        time.sleep(0.2)
+        time.sleep(0.3)
         continue
     # if response.text.find('抢兑时间') != -1:
     #     print('还未开始')
@@ -49,3 +49,5 @@ while result:
     #     exit()
     else:
         print('领取失败, 重新领取')
+        time.sleep(0.3)
+
